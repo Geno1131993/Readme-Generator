@@ -35,3 +35,9 @@ inquirer.prompt([
 function buildUrl(username){
     return "http://api.github.com/users/" + username + "/repos";
 }
+
+
+
+function write(){
+
+}
