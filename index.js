@@ -2,11 +2,9 @@ const fs = require("fs");
 const https = require("https");
 const inquirer = require("inquirer");
 const axios = require("axios");
+const {promisify} = require("util");
 
 var repos = '';
-
-
-
 
 
 inquirer.prompt([
@@ -17,18 +15,17 @@ inquirer.prompt([
     }
 ]).then(function({username}){
 
-    console.log(username);
+    //onsole.log(username);
 
 
     axios  
         .get(buildUrl(username))
         .then(function(response) {
-            console.log(response.data);
+            //console.log(response.data);
+            console.log(JSON.parse(response.data));
         });
 
 });
-
-
 
 
 
